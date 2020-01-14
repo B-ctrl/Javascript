@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ 
 </head>
 <body>
 
@@ -47,6 +48,18 @@
         <div class="col-sm-8">
             <br>
             <h3 style="text-align:center;" id="pwd"></h3>
+         
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="text-align:center;">
+            <br>
+            <p>Click on the button to copy the text to your clipboard. </p>
+            <input style="text-align:center;" type="text" id="newpwd">
+            <button onclick="copyText()">Copy text</button>
+
         </div>
         <div class="col-sm-2"></div>
     </div>
@@ -94,6 +107,9 @@
 
 
 <script>
+
+
+
 function pwdGen(){
 
 // create the reference strings    
@@ -127,6 +143,9 @@ var U3 = upperCase.charAt(U3rand);
 
 var combined = L1 + U1 + U2 + S1 + L2 + U3 + S2 + S3;
 
+var test = "Hello"; 
+document.getElementById("newpwd").value = combined; 
+
 /*
 document.getElementById("firstposition").innerHTML = firstposition;
 document.getElementById("L1").innerHTML = L1;
@@ -152,6 +171,13 @@ document.getElementById("pwd").innerHTML = combined;
 
 }
 
+
+function copyText() {
+  var copyText = document.getElementById("newpwd");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+}
 
 </script>
 
