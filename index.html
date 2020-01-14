@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Here is your password</h2>
+
+
+<!--
+<p>1st random number for lowerCase</p>
+<p id="firstposition"></p>
+<p id="L1"></p>
+<p>2nd random number for lowerCase</p>
+<p id="secondposition"></p>
+<p id="L2"></p>
+<p>1st random number for UpperCase</p>
+<p id="U1rand"></p>
+<p id="U1"></p>
+<p>2nd random number for UpperCase</p>
+<p id="U2rand"></p>
+<p id="U2"></p>
+<p>3rd random number for UpperCase</p>
+<p id="U3rand"></p>
+<p id="U3"></p>
+<p>1st random number for Special</p>
+<p id="specialOne"></p>
+<p id="S1"></p>
+<p>2nd random number for Special</p>
+<p id="specialTwo"></p>
+<p id="S2"></p>
+<p>3rd random number for Special</p>
+<p id="specialThree"></p>
+<p id="S3"></p>
+-->
+
+<br>
+<br>
+<p>Here is your password</p>
+<p id="pwd"></p>
+
+<script>
+
+// create the reference strings    
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";  // creates the lowercase alphabet string
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  // creates the uppercase alphabet string
+var special = "~!@#$%^&*()_-";  // creates the special character string
+
+// random number generator from 0-25 to align with alphabet string length
+var firstposition = Math.floor(Math.random() * 26) ;
+var secondposition = Math.floor(Math.random() * 26) ;
+var U1rand = Math.floor(Math.random() * 26) ;
+var U2rand = Math.floor(Math.random() * 26) ;
+var U3rand = Math.floor(Math.random() * 26) ;
+
+// random number generator from 0-11 to align with alphabet string length
+var specialOne = Math.floor(Math.random() * 12) ;
+var specialTwo = Math.floor(Math.random() * 12) ;
+var specialThree = Math.floor(Math.random() * 12) ;
+
+// associating the random number to a letter on the alphabet
+var L1 = lowerCase.charAt(firstposition);
+var L2 = lowerCase.charAt(secondposition);
+var S1 = special.charAt(specialOne)
+var S2 = special.charAt(specialTwo)
+var S3 = special.charAt(specialThree)
+var U1 = upperCase.charAt(U1rand);
+var U2 = upperCase.charAt(U2rand);
+var U3 = upperCase.charAt(U3rand);
+
+
+
+var combined = L1 + U1 + U2 + S1 + L2 + U3 + S2 + S3;
+
+/*
+document.getElementById("firstposition").innerHTML = firstposition;
+document.getElementById("L1").innerHTML = L1;
+document.getElementById("secondposition").innerHTML = secondposition;
+document.getElementById("L2").innerHTML = L2;
+
+document.getElementById("U1rand").innerHTML = U1rand;
+document.getElementById("U1").innerHTML = U1;
+document.getElementById("U2rand").innerHTML = U2rand;
+document.getElementById("U2").innerHTML = U2;
+document.getElementById("U3rand").innerHTML = U3rand;
+document.getElementById("U3").innerHTML = U3;
+
+document.getElementById("specialOne").innerHTML = specialOne;
+document.getElementById("S1").innerHTML = S1;
+document.getElementById("specialTwo").innerHTML = specialTwo;
+document.getElementById("S2").innerHTML = S2;
+document.getElementById("specialThree").innerHTML = specialThree;
+document.getElementById("S3").innerHTML = S3;
+*/
+
+document.getElementById("pwd").innerHTML = combined;
+
+
+
+</script>
+
+</body>
+</html>
+
