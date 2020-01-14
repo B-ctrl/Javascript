@@ -2,7 +2,13 @@
 <html>
 <body>
 
-<h2>Here is your password</h2>
+<h2>Need a password?</h2>
+
+<button type="button"
+onclick=pwdGen()>
+Click me to generate a password.</button>
+
+
 
 
 <!--
@@ -38,6 +44,7 @@
 <p id="pwd"></p>
 
 <script>
+function pwdGen(){
 
 // create the reference strings    
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";  // creates the lowercase alphabet string
@@ -93,6 +100,7 @@ document.getElementById("S3").innerHTML = S3;
 
 document.getElementById("pwd").innerHTML = combined;
 
+}
 
 
 </script>
