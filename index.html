@@ -8,14 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="myScript.js"></script>
+
  
 </head>
 <body>
 
 <div class="jumbotron text-center">
   <h1>Generate a password</h1>
-  <p>This will generate a password of 8-characters using a combination 
+  <p>This will generate a password of user specified length.</p> <p>The user will also choose the combination 
       of upper/lower-case letters, numbers and special symbols!</p> 
 </div>
   
@@ -34,10 +34,10 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-8" style="text-align:center;">
             <p>
-            <input id="pwdLength">Designate password length between 8 and 128.</p>
+            <input id="pwdLength">Designate a password length between 8 and 128.</p>
 
            
-            
+           <!--Comment out the next 3-lines after testing--> 
             <p>requested length:</p>
             <p id="demo1"></p>
             <p id="demo"></p>
@@ -73,16 +73,32 @@
             <br>
             <p>Click on the button to copy the text to your clipboard. </p>
             <input style="text-align:center;" type="text" id="newpwd">
-            <button onclick="copyText()">Copy text</button>
+            <button onclick="copyText()">Copy to clipboard</button>
 
         </div>
         <div class="col-sm-2"></div>
     </div>
-
+<br>
         
 </div>
 
+<p id="array"></p>
+<p id="array2"></p>
+<p id="array3"></p>
+<br>
+<p id="array4"></p>
+<p id="array5"></p>
+<p id="array6"></p>
+<br>
+<p id="array7"></p>
+<p id="array8"></p>
+<p id="array9"></p>
+<br>
+<p id="array10"></p>
+<p id="array11"></p>
+<p id="array12"></p>
 
+<script src="myScript.js"></script>
 </body>
 </html>
 
