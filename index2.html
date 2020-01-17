@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Password Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="myScript.js"></script>
+
+ 
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Generate a password</h1>
+  <p>This will generate a password of 8-characters using a combination 
+      of upper/lower-case letters, numbers and special symbols!</p> 
+</div>
+  
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">  
+            <h2 style="text-align:center;">Need a password?</h2>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">  
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="text-align:center;"><button type="button" onclick=pwdGen()>
+            Click me to generate a password.</button></div>
+        <div class="col-sm-2"></div>  
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="text-align:center;">
+            <br>
+            Here is your password: 
+        </div>
+        <div class="col-sm-2"></div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <br>
+            <h3 style="text-align:center;" id="pwd"></h3>
+         
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="text-align:center;">
+            <br>
+            <p>Click on the button to copy the text to your clipboard. </p>
+            <input style="text-align:center;" type="text" id="newpwd">
+            <button onclick="copyText()">Copy text</button>
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+        
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<p>1st random number for lowerCase</p>
+<p id="firstposition"></p>
+<p id="L1"></p>
+<p>2nd random number for lowerCase</p>
+<p id="secondposition"></p>
+<p id="L2"></p>
+<p>1st random number for UpperCase</p>
+<p id="U1rand"></p>
+<p id="U1"></p>
+<p>2nd random number for UpperCase</p>
+<p id="U2rand"></p>
+<p id="U2"></p>
+<p>3rd random number for UpperCase</p>
+<p id="U3rand"></p>
+<p id="U3"></p>
+<p>1st random number for Special</p>
+<p id="specialOne"></p>
+<p id="S1"></p>
+<p>2nd random number for Special</p>
+<p id="specialTwo"></p>
+<p id="S2"></p>
+<p>3rd random number for Special</p>
+<p id="specialThree"></p>
+<p id="S3"></p>
+-->
+
+
+
+<script>
+
+
+
+function pwdGen(){
+
+// create the reference strings    
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";  // creates the lowercase alphabet string
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  // creates the uppercase alphabet string
+var special = "~!@#$%^&*()_-";  // creates the special character string
+
+// random number generator from 0-25 to align with alphabet string length
+var firstposition = Math.floor(Math.random() * 26) ;
+var secondposition = Math.floor(Math.random() * 26) ;
+var U1rand = Math.floor(Math.random() * 26) ;
+var U2rand = Math.floor(Math.random() * 26) ;
+var U3rand = Math.floor(Math.random() * 26) ;
+
+// random number generator from 0-11 to align with alphabet string length
+var specialOne = Math.floor(Math.random() * 12) ;
+var specialTwo = Math.floor(Math.random() * 12) ;
+var specialThree = Math.floor(Math.random() * 12) ;
+
+// associating the random number to a letter on the alphabet
+var L1 = lowerCase.charAt(firstposition);
+var L2 = lowerCase.charAt(secondposition);
+var S1 = special.charAt(specialOne)
+var S2 = special.charAt(specialTwo)
+var S3 = special.charAt(specialThree)
+var U1 = upperCase.charAt(U1rand);
+var U2 = upperCase.charAt(U2rand);
+var U3 = upperCase.charAt(U3rand);
+
+
+
+var combined = L1 + U1 + U2 + S1 + L2 + U3 + S2 + S3;
+
+var test = "Hello"; 
+document.getElementById("newpwd").value = combined; 
+
+/*
+document.getElementById("firstposition").innerHTML = firstposition;
+document.getElementById("L1").innerHTML = L1;
+document.getElementById("secondposition").innerHTML = secondposition;
+document.getElementById("L2").innerHTML = L2;
+
+document.getElementById("U1rand").innerHTML = U1rand;
+document.getElementById("U1").innerHTML = U1;
+document.getElementById("U2rand").innerHTML = U2rand;
+document.getElementById("U2").innerHTML = U2;
+document.getElementById("U3rand").innerHTML = U3rand;
+document.getElementById("U3").innerHTML = U3;
+
+document.getElementById("specialOne").innerHTML = specialOne;
+document.getElementById("S1").innerHTML = S1;
+document.getElementById("specialTwo").innerHTML = specialTwo;
+document.getElementById("S2").innerHTML = S2;
+document.getElementById("specialThree").innerHTML = specialThree;
+document.getElementById("S3").innerHTML = S3;
+*/
+
+document.getElementById("pwd").innerHTML = combined;
+
+}
+
+
+function copyText() {
+  var copyText = document.getElementById("newpwd");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
