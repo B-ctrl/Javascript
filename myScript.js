@@ -1,5 +1,9 @@
  
-function myLength() {
+
+   
+function pwdGen(){
+
+    // validating the requested pwd length
     var x, text;
   
     // Get the value of the input field with id="pwdLength"
@@ -15,11 +19,6 @@ function myLength() {
     document.getElementById("demo").innerHTML = text;
     document.getElementById("demo1").innerHTML = x;
     
-}
-   
-function pwdGen(){
-
-
   
 
 
