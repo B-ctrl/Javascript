@@ -1,9 +1,27 @@
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Paragraph changed.";
-   }
-   
+ 
+function myLength() {
+    var x, text;
+  
+    // Get the value of the input field with id="pwdLength"
+    x = document.getElementById("pwdLength").value;
+  
+    // If x is Not a Number or less than 8 or greater than 128
+    if (isNaN(x) || x < 8 || x > 128) {
+      window.alert("Requested password length not within guidelines!");
+      text = "Bad input";
+    } else {
+      text = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = text;
+    document.getElementById("demo1").innerHTML = x;
+    
+}
    
 function pwdGen(){
+
+
+  
+
 
     // create the reference strings    
     var lowerCase = "abcdefghijklmnopqrstuvwxyz";  // creates the lowercase alphabet string

@@ -32,8 +32,16 @@
     </div>
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-8" style="text-align:center;"><button type="button" onclick=pwdGen()>
-            Click me to generate a password.</button>
+        <div class="col-sm-8" style="text-align:center;">
+            <p>Please input a number between 8 and 128:</p>
+
+            <input id="pwdLength">
+            
+            <button type="button" onclick="myLength()">Validate Length</button>
+            
+            <p>requested length:</p>
+            <p id="demo1"></p>
+            <p id="demo"></p>
         </div>
         <div class="col-sm-2"></div>
     </div>
